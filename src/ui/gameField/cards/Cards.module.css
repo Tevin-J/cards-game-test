@@ -1,0 +1,15 @@
+.cards {
+    width: 64px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    transform: translate(-50%);
+}
+.loading {
+    pointer-events: none;
+    width: 64px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    transform: translate(-50%);
+}
