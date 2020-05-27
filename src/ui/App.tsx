@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
-import GameField from "./gameField/GameField";
-import {useSelector} from "react-redux";
-import {AppStateType} from "../bll/store";
+import GamePageContainer from "./gamePage/GamePageContainer";
+import { Switch, Route } from 'react-router-dom';
+import StartPage from "./startPage/StartPage";
+import VictoryPage from "./victoryPage/VictoryPage";
 
 const App: React.FC = () => {
-    const {counter} = useSelector((store: AppStateType) => store.reducer)
+
     return (
         <div className="App">
-            {counter}
-            <GameField/>
+            <Switch>
+                <Route path={'/'} exact render={() => <StartPage/>}/>
+                <Route path={'/game/'} render={() => <GamePageContainer/>}/>
+                <Route path={'/victory/'} render={() => <VictoryPage/>}/>
+            </Switch>
         </div>
     );
 }

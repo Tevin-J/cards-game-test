@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './Card.module.css'
-import {CardType} from "../../../../bll/reducer";
+import {CardType} from "../../../../../bll/reducer";
 
 type OwnPropsType = {
     card: CardType

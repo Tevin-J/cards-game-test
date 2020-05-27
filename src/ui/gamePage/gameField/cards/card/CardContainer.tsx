@@ -1,5 +1,5 @@
 import Card from "./Card";
-import {CardType, showCard} from "../../../../bll/reducer";
+import {CardType, showCard} from "../../../../../bll/reducer";
 import React from "react";
 import { useDispatch } from "react-redux";
 

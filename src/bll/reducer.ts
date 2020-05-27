@@ -91,6 +91,18 @@ const reducer = (state: InitialStateType = initialState, action: ActionType): In
                 ...state,
                 isLoading: !state.isLoading
             }
+        case 'App/Reducer/VICTORY_TOGGLING':
+            return  {
+                ...state,
+                cards: state.cards.map(c => {
+                    return {
+                        ...c,
+                        isShow: false,
+                        isOpen: false
+                    }
+                }),
+                counter: 0
+            }
         default:
             return state
     }
@@ -99,7 +111,8 @@ const reducer = (state: InitialStateType = initialState, action: ActionType): In
 export const actions = {
     toggleIsShow: (card: CardType) => ({type: 'App/Reducer/TOGGLE_IS_SHOW', card} as const),
     compareCards: () => ({type: 'App/Reducer/COMPARE_CARDS'} as const),
-    toggleIsLoading: () => ({type: 'App/Reducer/TOGGLE_IS_LOADING'} as const)
+    toggleIsLoading: () => ({type: 'App/Reducer/TOGGLE_IS_LOADING'} as const),
+    victoryToggling: () => ({type: 'App/Reducer/VICTORY_TOGGLING'} as const)
 }
 type ActionType = InferActionTypes<typeof actions>
 
