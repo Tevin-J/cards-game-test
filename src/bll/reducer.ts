@@ -92,7 +92,7 @@ const reducer = (state: InitialStateType = initialState, action: ActionType): In
                 isLoading: !state.isLoading
             }
         case 'App/Reducer/VICTORY_TOGGLING':
-            return  {
+            return {
                 ...state,
                 cards: state.cards.map(c => {
                     return {
@@ -103,6 +103,19 @@ const reducer = (state: InitialStateType = initialState, action: ActionType): In
                 }),
                 counter: 0
             }
+        case 'App/Reducer/SHUFFLING_CARDS':
+            let shuffleArr: Array<CardType> = [...state.cards]
+            let shuffle = (array: Array<CardType>): void => {
+                for (let i = array.length - 1; i > 0; i--) {
+                    let j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+            shuffle(shuffleArr)
+            return {
+                ...state,
+                cards: shuffleArr
+            }
         default:
             return state
     }
@@ -112,7 +125,8 @@ export const actions = {
     toggleIsShow: (card: CardType) => ({type: 'App/Reducer/TOGGLE_IS_SHOW', card} as const),
     compareCards: () => ({type: 'App/Reducer/COMPARE_CARDS'} as const),
     toggleIsLoading: () => ({type: 'App/Reducer/TOGGLE_IS_LOADING'} as const),
-    victoryToggling: () => ({type: 'App/Reducer/VICTORY_TOGGLING'} as const)
+    victoryToggling: () => ({type: 'App/Reducer/VICTORY_TOGGLING'} as const),
+    shufflingCards: () => ({type: 'App/Reducer/SHUFFLING_CARDS'} as const)
 }
 type ActionType = InferActionTypes<typeof actions>
 
@@ -127,18 +141,18 @@ export const showCard = (card: CardType): ThunkType => {
         let showCards = cards.filter(c => c.isShow)
 
         /*если карта, на которую кликнули, еще не показана и не угадана, то показываем ее*/
-        if(!card.isOpen && !card.isShow) {
+        if (!card.isOpen && !card.isShow) {
             dispatch(actions.toggleIsShow(card))
         }
 
         /*если одна карта уже показывается на экране, а вторая не показана и не угадана, то сравниваем обе карты*/
         if (showCards.length !== 0 && !card.isOpen && !card.isShow) {
-                /*запрещаем клик на любую карту во время проверки*/
+            /*запрещаем клик на любую карту во время проверки*/
+            dispatch(actions.toggleIsLoading())
+            setTimeout(() => {
+                dispatch(actions.compareCards())
                 dispatch(actions.toggleIsLoading())
-                setTimeout(() => {
-                    dispatch(actions.compareCards())
-                    dispatch(actions.toggleIsLoading())
-                }, 1000)
+            }, 1000)
         }
     };
 };

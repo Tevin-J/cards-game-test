@@ -10,8 +10,10 @@ type PropsType = OwnPropsType
 const GamePage: React.FC<PropsType> = (props) => {
     return (
         <div className={styles.gamePage}>
-            {props.counter}
             <GameField/>
+            <div className={styles.counter}>
+                {props.counter}
+            </div>
         </div>
 
     )

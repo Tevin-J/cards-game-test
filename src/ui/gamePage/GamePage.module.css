@@ -1,5 +1,14 @@
 .gamePage {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right top, #ff9472, #f2709c);
+}
+.counter {
+    margin-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
 }
