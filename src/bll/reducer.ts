@@ -9,6 +9,7 @@ import pic_8 from '../assets/braid.svg'
 import {AppStateType, InferActionTypes} from "./store";
 import {ThunkAction, ThunkDispatch} from "redux-thunk";
 
+
 export type CardType = {
     id: number
     title: string

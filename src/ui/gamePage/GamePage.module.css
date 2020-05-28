@@ -8,7 +8,7 @@
 }
 .counter {
     margin-top: 50px;
-    font-family: 'Montserrat', sans-serif;
+    composes: smallText from '../../index.css';
     font-size: 30px;
     font-weight: bold;
 }

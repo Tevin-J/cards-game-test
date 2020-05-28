@@ -1,8 +1,9 @@
 import React from "react";
 import styles from './StartPage.module.css'
-import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {actions} from "../../bll/reducer";
+import Button from "../common/button/Button";
+
 
 const StartPage: React.FC = () => {
 
@@ -19,10 +20,7 @@ const StartPage: React.FC = () => {
             <div className={styles.rules}>
                 Try to find all pairs of cards opening one by one.
             </div>
-            <NavLink to={'/game/'} className={styles.buttonWrapper} onClick={onStartClick}>
-                <p>START</p>
-            </NavLink>
-
+            <Button path={'/game/'} onClick={onStartClick} text={'START'}/>
         </div>
     )
 }

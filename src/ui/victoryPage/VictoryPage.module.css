@@ -8,35 +8,8 @@
     background-image: linear-gradient(to right top, #ff9472, #f2709c);
 }
 .congrats {
-    font-family: 'Denk One', sans-serif;
-    font-size: 60px;
-    margin-bottom: 50px;
-    letter-spacing: 0.093em;
-    text-shadow: 2px 3px 0px white;
+    composes: largeText from '../../index.css';
 }
 .score {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    margin-bottom: 50px;
-}
-.buttonWrapper {
-    display: inline-block;
-    position: relative;
-    border-radius: 50px;
-    background: #00c9b7;
-    width: 180px;
-    height: 50px;
-    color: #fff;
-    font-size: 0.97em;
-    letter-spacing: 0.094em;
-    cursor: pointer;
-    -webkit-box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
-    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
-    text-align: center;
-    text-decoration: none;
-    transition: 0.3s;
-    margin-bottom: 15px;
-}
-.buttonWrapper:hover, .buttonWrapper:focus, .buttonWrapper:active {
-    opacity: 0.8;
+    composes: smallText from '../../index.css';
 }

@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.largeText {
+  font-family: 'Denk One', sans-serif;
+  font-size: 60px;
+  margin-bottom: 50px;
+  letter-spacing: 0.093em;
+  text-shadow: 2px 3px 0px white;
+}
+
+.smallText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
