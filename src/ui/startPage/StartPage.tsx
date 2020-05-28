@@ -4,9 +4,7 @@ import {useDispatch} from "react-redux";
 import {actions} from "../../bll/reducer";
 import Button from "../common/button/Button";
 
-
 const StartPage: React.FC = () => {
-
     const dispatch = useDispatch()
 
     const onStartClick = () => {

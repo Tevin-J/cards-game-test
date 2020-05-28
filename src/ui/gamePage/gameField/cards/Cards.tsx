@@ -12,9 +12,9 @@ type PropsType = OwnPropsType
 const Cards: React.FC<PropsType> = (props) => {
 
     const cardsElements = props.cards.map(c => <CardContainer key={c.id} card={c}/>)
-
+    const classForCards = props.isLoading ? `${styles.loading} ${styles.cards}` : styles.cards
     return (
-        <div className={props.isLoading ? styles.loading : styles.cards}>
+        <div className={classForCards}>
             {cardsElements}
         </div>
     )

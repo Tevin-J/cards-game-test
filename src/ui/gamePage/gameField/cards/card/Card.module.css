@@ -1,8 +1,6 @@
 .card {
     border: 1px solid white;
     background-color: #ffe0ac;
-    width: 100px;
-    height: 100px;
 }
 .showedCard {
     width: 100%;
@@ -11,16 +9,5 @@
     display: none;
 }
 .openedCard {
-    border: 1px solid white;
     background-color: transparent;
-    width: 100px;
-    height: 100px;
-}
-@media screen and (max-width: 767px){
-    .card {
-        width: 100%;
-    }
-    .openedCard {
-        width: 100%;
-    }
 }

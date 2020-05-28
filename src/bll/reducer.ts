@@ -1,11 +1,11 @@
-import pic_1 from '../assets/cactus.svg'
-import pic_2 from '../assets/cupcake.svg'
-import pic_3 from '../assets/hat.svg'
-import pic_4 from '../assets/hotDog.svg'
-import pic_5 from '../assets/quentao.svg'
-import pic_6 from '../assets/scarecrow.svg'
-import pic_7 from '../assets/sunflower.svg'
-import pic_8 from '../assets/braid.svg'
+import pic_1 from '../assets/img/cactus.svg'
+import pic_2 from '../assets/img/cupcake.svg'
+import pic_3 from '../assets/img/hat.svg'
+import pic_4 from '../assets/img/hotDog.svg'
+import pic_5 from '../assets/img/quentao.svg'
+import pic_6 from '../assets/img/scarecrow.svg'
+import pic_7 from '../assets/img/sunflower.svg'
+import pic_8 from '../assets/img/braid.svg'
 import {AppStateType, InferActionTypes} from "./store";
 import {ThunkAction, ThunkDispatch} from "redux-thunk";
 

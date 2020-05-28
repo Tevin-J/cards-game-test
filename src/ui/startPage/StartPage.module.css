@@ -13,4 +13,9 @@
 .rules {
     composes: smallText from '../../index.css';
 }
-
+@media screen and (max-width: 767px){
+    .rules {
+        padding: 0 10px;
+        text-align: center;
+    }
+}

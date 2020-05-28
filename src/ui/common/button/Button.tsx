@@ -10,6 +10,7 @@ type OwnPropsType = {
 type PropsType = OwnPropsType
 
 const Button: React.FC<PropsType> = (props) => {
+
     const onButtonClick = () => {
         props.onClick()
     }
