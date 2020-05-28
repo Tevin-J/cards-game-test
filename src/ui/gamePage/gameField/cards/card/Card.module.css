@@ -1,9 +1,12 @@
 .card {
     border: 1px solid white;
     background-color: #ffe0ac;
+    display: flex;
+    justify-content: center;
 }
 .showedCard {
-    width: 100%;
+    width: 80%;
+    user-select: none;
 }
 .closedCard {
     display: none;
