@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/cards-game-test/static/css/main.271e1857.chunk.css",
+    "main.js": "/cards-game-test/static/js/main.eba3015a.chunk.js",
+    "main.js.map": "/cards-game-test/static/js/main.eba3015a.chunk.js.map",
+    "runtime-main.js": "/cards-game-test/static/js/runtime-main.3c56b2ab.js",
+    "runtime-main.js.map": "/cards-game-test/static/js/runtime-main.3c56b2ab.js.map",
+    "static/js/2.9ef100b3.chunk.js": "/cards-game-test/static/js/2.9ef100b3.chunk.js",
+    "static/js/2.9ef100b3.chunk.js.map": "/cards-game-test/static/js/2.9ef100b3.chunk.js.map",
+    "index.html": "/cards-game-test/index.html",
+    "precache-manifest.15d7ee340b774787d8ffce50d05f4ce4.js": "/cards-game-test/precache-manifest.15d7ee340b774787d8ffce50d05f4ce4.js",
+    "service-worker.js": "/cards-game-test/service-worker.js",
+    "static/css/main.271e1857.chunk.css.map": "/cards-game-test/static/css/main.271e1857.chunk.css.map",
+    "static/js/2.9ef100b3.chunk.js.LICENSE.txt": "/cards-game-test/static/js/2.9ef100b3.chunk.js.LICENSE.txt",
+    "static/media/braid.svg": "/cards-game-test/static/media/braid.7cba9949.svg",
+    "static/media/cactus.svg": "/cards-game-test/static/media/cactus.2667d78b.svg",
+    "static/media/click.mp3": "/cards-game-test/static/media/click.4f5263e9.mp3",
+    "static/media/cupcake.svg": "/cards-game-test/static/media/cupcake.d4c8b5e9.svg",
+    "static/media/hat.svg": "/cards-game-test/static/media/hat.7e2f2138.svg",
+    "static/media/hotDog.svg": "/cards-game-test/static/media/hotDog.75bf2c2d.svg",
+    "static/media/quentao.svg": "/cards-game-test/static/media/quentao.6c67018b.svg",
+    "static/media/scarecrow.svg": "/cards-game-test/static/media/scarecrow.118acedf.svg",
+    "static/media/sunflower.svg": "/cards-game-test/static/media/sunflower.2a0c4222.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3c56b2ab.js",
+    "static/js/2.9ef100b3.chunk.js",
+    "static/css/main.271e1857.chunk.css",
+    "static/js/main.eba3015a.chunk.js"
+  ]
+}
