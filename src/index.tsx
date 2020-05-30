@@ -6,6 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import store from "./bll/store";
 import {HashRouter} from "react-router-dom";
+import 'react-app-polyfill/ie9'
+import 'core-js/es/set'
+import 'core-js/es/map'
 
 ReactDOM.render(
     <React.StrictMode>

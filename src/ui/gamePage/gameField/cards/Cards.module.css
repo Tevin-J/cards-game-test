@@ -1,7 +1,14 @@
 .cards {
-    display: grid;
+    /*display: grid;
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 408px;
+    height: 408px;
     border: 1px solid white;
 }
 .loading {
@@ -9,11 +16,13 @@
 }
 @media screen and (max-width: 767px){
     .cards {
-        grid-template-columns: repeat(4, 70px);
-        grid-template-rows: repeat(4, 70px);
+        /*grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(4, 70px);*/
+        width: 316px;
+        height: 316px;
     }
     .loading {
-        grid-template-columns: repeat(4, 70px);
-        grid-template-rows: repeat(4, 70px);
+        /*grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(4, 70px);*/
     }
 }

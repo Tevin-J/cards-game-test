@@ -1,11 +1,15 @@
 .card {
     border: 1px solid white;
     background-color: #ffe0ac;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .showedCard {
     width: 80%;
+    height: 80%;
     user-select: none;
 }
 .closedCard {
@@ -13,4 +17,11 @@
 }
 .openedCard {
     background-color: transparent;
+}
+
+@media screen and (max-width: 767px){
+    .card {
+        width: 77px;
+        height: 77px;
+    }
 }
