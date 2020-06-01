@@ -22,6 +22,7 @@ type InitialStateType = {
     counter: number
     isLoading: boolean
 }
+
 const initialState: InitialStateType = {
     cards: [
         {id: 0, title: 'pic_1', img: pic_1, isShow: false, isOpen: false},
@@ -44,12 +45,13 @@ const initialState: InitialStateType = {
     counter: 0,
     isLoading: false
 }
+
 const reducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case "App/Reducer/TOGGLE_IS_SHOW":
-            let newCards1: Array<CardType> = [...state.cards]
+            let newCardsArr: Array<CardType> = [...state.cards]
             if (!action.card.isOpen) {
-                newCards1 = newCards1.map(c => {
+                newCardsArr = newCardsArr.map(c => {
                     if (c.id === action.card.id) {
                         return {...c, isShow: true}
                     } else {
@@ -58,19 +60,19 @@ const reducer = (state: InitialStateType = initialState, action: ActionType): In
                 })
                 return {
                     ...state,
-                    cards: newCards1
+                    cards: newCardsArr
                 }
             } else {
                 return state
             }
         case "App/Reducer/COMPARE_CARDS":
-            let showCards = state.cards.filter(c => c.isShow)
+            let showedCards = state.cards.filter(c => c.isShow)
             let newCards: Array<CardType> = [...state.cards]
             let counterValue: number = state.counter
-            if (showCards[0].title === showCards[1].title && showCards[0].id !== showCards[1].id) {
+            if (showedCards[0].title === showedCards[1].title && showedCards[0].id !== showedCards[1].id) {
                 counterValue = counterValue + 1
                 newCards = newCards.map(c => {
-                    if (c.id === showCards[0].id || c.id === showCards[1].id) {
+                    if (c.id === showedCards[0].id || c.id === showedCards[1].id) {
                         return {...c, isOpen: true, isShow: false}
                     } else {
                         return c
@@ -105,23 +107,24 @@ const reducer = (state: InitialStateType = initialState, action: ActionType): In
                 counter: 0
             }
         case 'App/Reducer/SHUFFLING_CARDS':
-            let shuffleArr: Array<CardType> = [...state.cards]
+            let shuffledArr: Array<CardType> = [...state.cards]
             let shuffle = (array: Array<CardType>): void => {
                 for (let i = array.length - 1; i > 0; i--) {
                     let j = Math.floor(Math.random() * (i + 1));
                     [array[i], array[j]] = [array[j], array[i]];
                 }
             }
-            shuffle(shuffleArr)
+            shuffle(shuffledArr)
             return {
                 ...state,
-                cards: shuffleArr
+                cards: shuffledArr
             }
         default:
             return state
     }
 }
 
+/*actions*/
 export const actions = {
     toggleIsShow: (card: CardType) => ({type: 'App/Reducer/TOGGLE_IS_SHOW', card} as const),
     compareCards: () => ({type: 'App/Reducer/COMPARE_CARDS'} as const),
@@ -131,25 +134,28 @@ export const actions = {
 }
 type ActionType = InferActionTypes<typeof actions>
 
-
+/*thunks*/
 type ThunkType = ThunkAction<void, AppStateType, unknown, ActionType>
 
 export const showCard = (card: CardType): ThunkType => {
     return (dispatch: ThunkDispatch<AppStateType, unknown, ActionType>,
             getState: () => AppStateType) => {
+
+        /*getting cards array from state and filtering cards with prop isShow===true*/
         const state = getState()
         const {cards} = state.reducer
         let showCards = cards.filter(c => c.isShow)
 
-        /*если карта, на которую кликнули, еще не показана и не угадана, то показываем ее*/
+        /*show the active card if it has not been shown or clicked*/
         if (!card.isOpen && !card.isShow) {
             dispatch(actions.toggleIsShow(card))
         }
 
-        /*если одна карта уже показывается на экране, а вторая не показана и не угадана, то сравниваем обе карты*/
+        /*compare two cards if the first card is showed and second is not showed and guessed*/
         if (showCards.length !== 0 && !card.isOpen && !card.isShow) {
-            /*запрещаем клик на любую карту во время проверки*/
+            /*prevent click on any card while comparing is going on*/
             dispatch(actions.toggleIsLoading())
+            /*after 1 sec delay comparing starts*/
             setTimeout(() => {
                 dispatch(actions.compareCards())
                 dispatch(actions.toggleIsLoading())
@@ -157,6 +163,5 @@ export const showCard = (card: CardType): ThunkType => {
         }
     };
 };
-
 
 export default reducer

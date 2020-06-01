@@ -6,9 +6,9 @@ import {Redirect} from "react-router";
 
 const CardsContainer: React.FC = () => {
 
-    /*получаем из store карты с помощью useSelector*/
     const {cards, isLoading} = useSelector((store: AppStateType) => store.reducer)
 
+    /*redirect to victory page if all cards has opened */
     if (cards.every(c => c.isOpen)) {
         return <Redirect to={'/victory/'}/>
     }

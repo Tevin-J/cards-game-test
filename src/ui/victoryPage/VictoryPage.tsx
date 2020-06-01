@@ -1,19 +1,16 @@
 import React from "react";
 import styles from './VictoryPage.module.css'
-import {useDispatch, useSelector} from "react-redux";
-import {actions} from "../../bll/reducer";
-import {AppStateType} from "../../bll/store";
 import Button from "../common/button/Button";
 
-const VictoryPage: React.FC = () => {
+type PropsType = {
+    score: number
+    onRestartClick: () => void
+}
 
-    const {counter} = useSelector((state: AppStateType) => state.reducer)
-    let score = 108 - counter
-    const dispatch = useDispatch()
+const VictoryPage: React.FC<PropsType> = (props) => {
 
-    const onRestartClick = () => {
-        dispatch(actions.victoryToggling())
-        dispatch(actions.shufflingCards())
+    const onButtonClick = () => {
+        props.onRestartClick()
     }
 
     return (
@@ -22,10 +19,10 @@ const VictoryPage: React.FC = () => {
                 You won!
             </div>
             <div className={styles.score}>
-                Your score is {score}.
+                Your score is {props.score}.
             </div>
-            <Button path={'/game/'} onClick={onRestartClick} text={'RESTART'}/>
-            <Button path={'/'} onClick={onRestartClick} text={'MAIN PAGE'}/>
+            <Button path={'/game/'} onClick={onButtonClick} text={'RESTART'}/>
+            <Button path={'/'} onClick={onButtonClick} text={'MAIN PAGE'}/>
         </div>
     )
 }

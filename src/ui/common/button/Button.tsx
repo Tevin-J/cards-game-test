@@ -14,6 +14,7 @@ const Button: React.FC<PropsType> = (props) => {
     const onButtonClick = () => {
         props.onClick()
     }
+
     return (
         <NavLink to={props.path} className={styles.buttonWrapper}>
             <p onClick={onButtonClick}>

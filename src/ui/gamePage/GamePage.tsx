@@ -2,10 +2,9 @@ import GameField from "./gameField/GameField";
 import React from "react";
 import styles from './GamePage.module.css'
 
-type OwnPropsType = {
+type PropsType = {
     counter: number
 }
-type PropsType = OwnPropsType
 
 const GamePage: React.FC<PropsType> = (props) => {
     return (
@@ -15,7 +14,6 @@ const GamePage: React.FC<PropsType> = (props) => {
                 {props.counter}
             </div>
         </div>
-
     )
 }
 export default GamePage

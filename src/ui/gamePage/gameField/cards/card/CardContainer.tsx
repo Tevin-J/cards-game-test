@@ -4,16 +4,16 @@ import React from "react";
 import { useDispatch } from "react-redux";
 const clickSound = require('../../../../../assets/audio/click.mp3')
 
-type OwnPropsType = {
+type PropsType = {
     card: CardType
 }
-type PropsType = OwnPropsType
 
 const CardContainer: React.FC<PropsType> = (props) => {
 
-    /*получаем action по открытию карточки*/
+    /*dispatch showCard action to show the clicked card*/
     const dispatch = useDispatch()
     const openCard = () => {
+        /*making card click sound*/
         new Audio(clickSound).play()
         dispatch(showCard(props.card))
     }
