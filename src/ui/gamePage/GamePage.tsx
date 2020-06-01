@@ -1,6 +1,6 @@
-import GameField from "./gameField/GameField";
 import React from "react";
 import styles from './GamePage.module.css'
+import CardsContainer from "./gameField/cards/CardsContainer";
 
 type PropsType = {
     counter: number
@@ -9,7 +9,7 @@ type PropsType = {
 const GamePage: React.FC<PropsType> = (props) => {
     return (
         <div className={styles.gamePage}>
-            <GameField/>
+            <CardsContainer/>
             <div className={styles.counter}>
                 {props.counter}
             </div>

@@ -4,10 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-image: linear-gradient(to right top, #ff9472, #f2709c);
 }
 .title {
+    padding-top: 100px;
     composes: largeText from '../../index.css';
 }
 .rules {
