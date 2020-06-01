@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bd35622bd3704aa870159154aed63b7e",
+    "revision": "3f108fc95615a9f74cd4da43691675c2",
     "url": "/cards-game-test/index.html"
   },
   {
-    "revision": "8f190a1a987801289c54",
-    "url": "/cards-game-test/static/css/main.561b06b7.chunk.css"
+    "revision": "e255dc634ec1245e98fa",
+    "url": "/cards-game-test/static/css/main.054d31b0.chunk.css"
   },
   {
-    "revision": "33aa65a509539ee16c6b",
-    "url": "/cards-game-test/static/js/2.2cb9f99d.chunk.js"
+    "revision": "06011dfa5a8a80146984",
+    "url": "/cards-game-test/static/js/2.16a9bc29.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/cards-game-test/static/js/2.2cb9f99d.chunk.js.LICENSE.txt"
+    "url": "/cards-game-test/static/js/2.16a9bc29.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8f190a1a987801289c54",
-    "url": "/cards-game-test/static/js/main.326af325.chunk.js"
+    "revision": "e255dc634ec1245e98fa",
+    "url": "/cards-game-test/static/js/main.0bf82704.chunk.js"
   },
   {
     "revision": "f3846dda32e384f2d3b7",
